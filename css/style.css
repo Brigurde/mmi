@@ -21,8 +21,9 @@ body{
 }
 
 .accueil{
+  width: 100% !important;
   position: relative;
-  height: 100%;
+  height: 100% !important;
   background: #EBEBEB;
 }
 video{
