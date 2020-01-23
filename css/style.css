@@ -19,7 +19,8 @@ body{
   height: 100%;
   margin: 0;
 }
-section{
+
+.accueil{
   position: relative;
   height: 100%;
   background: #EBEBEB;
@@ -104,4 +105,104 @@ video{
   100%{
     transform: translateY(-10%);
   }
+}
+
+.annees:target+.accueil{
+  transform: translateY(-100%);
+}
+.annees{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 0;
+}
+.annees:target{
+  opacity: 1;
+  z-index: 5;
+}
+.premiereAnnee,.deuxiemeAnnee{
+  z-index: 6;
+  width: 25%;
+  height: 30%;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px black;
+  transition: 0.5s;
+}
+.premiereAnnee{
+  margin-right: 5%;
+  transform: translate(-200%,0);
+  background-image: url('../images/imageDeuxiemeAnnee.jpg');
+  background-size: cover;
+}
+.deuxiemeAnnee{
+  margin-left: 5%;
+  transform: translate(200%,0);
+  background-image: url('../images/imagePremiereAnnee.jpg');
+  background-size: cover;
+}
+.annees:target .premiereAnnee{
+  transform: translate(0,0);
+}
+.annees:target .deuxiemeAnnee{
+  transform: translate(0,0);
+}
+.annees:target .buttonToHome{
+  transform: translate(-50%,0);
+}
+.premiereAnnee:hover,.deuxiemeAnnee:hover{
+  transform: translate(0,-5%) !important;
+}
+.buttonToHome{
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translateX(-50%);
+  animation-name: buttonIndex;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  height: 5%;
+  width: 15%;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 7;
+  background: transparent;
+  transition: 0.2s;
+}
+.buttonToHome>a{
+  transition: 0.2s;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+}
+.buttonToHomeBack{
+  transition: 0.3s;
+  height: 5%;
+  width: 15%;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  background: black;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  border: 2px solid black;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  z-index: 6;
+}
+.buttonToHome:hover+.buttonToHomeBack{
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+.buttonToHome:hover>a{
+  color: white;
 }
