@@ -134,6 +134,22 @@ video{
   align-items: center;
 }
 .premiereAnnee,.deuxiemeAnnee{
+  height: 100%;
+  z-index: 3;
+  width: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  border-radius: 20px;
+
+}
+.premiereAnnee{
+  background-image: url('../images/imageDeuxiemeAnnee.jpg');
+}
+.deuxiemeAnnee{
+  background-image: url('../images/imagePremiereAnnee.jpg');
+}
+.annees1Et2>a{
+  position: relative;
   z-index: 6;
   width: 25%;
   height: 50%;
@@ -141,29 +157,45 @@ video{
   box-shadow: 0 2px 5px black;
   transition: 0.5s;
   min-width: 200px;
-  background-size: cover;
-  background-position: center bottom;
 }
-.premiereAnnee{
+.textUnderYear{
+  transition: 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.annees1Et2>a:hover .textUnderYear{
+  opacity: 1;
+  background: rgba(220,220,220,0.9);
+}
+.annees1Et2 p{
+  font-size: 40px;
+  color: black;
+  font-weight: bold;
+  width: 60%;
+  align-items: center;
+}
+  .annees1Et2>a:first-child{
   margin-right: 5%;
   transform: translate(-200%,-20%);
-  background-image: url('../images/imageDeuxiemeAnnee.jpg');
-}
-.deuxiemeAnnee{
-  margin-left: 5%;
+  }
+  .annees1Et2>a:last-child{
   transform: translate(200%,-20%);
-  background-image: url('../images/imagePremiereAnnee.jpg');
-}
-.annees:target .premiereAnnee{
-  transform: translate(0,-20%);
-}
-.annees:target .deuxiemeAnnee{
+  }
+.annees:target .annees1Et2>a{
   transform: translate(0,-20%);
 }
 .annees:target .buttonToHome{
   transform: translate(-50%,0);
 }
-.premiereAnnee:hover,.deuxiemeAnnee:hover{
+.annees1Et2>a:hover{
   transform: translate(0,-25%) !important;
 }
 .buttonToHome{
