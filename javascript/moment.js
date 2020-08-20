@@ -12,7 +12,7 @@ var string;
 function setTime() {
   if(total!=""){
   const start = moment();
-  const end   = moment('2021-06-30', 'YYYY-MM-DD');
+  const end   = moment('2021-10-1', 'YYYY-MM-DD');
   const range = parseInt(moment.range(start, end).valueOf()/1000);
   string = secondsToDhms(range)[0];
   time.innerHTML = string;
